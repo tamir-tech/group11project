@@ -22,6 +22,7 @@
     "dev": "nodemon src/index.js",
     "test": "mocha test/*.spec.js --color",
     "lint": "eslint src/*.js --color"
+    "start": "nodr src/index.js"
   },
   "repository": {
     "type": "git",
