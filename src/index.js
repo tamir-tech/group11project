@@ -1,6 +1,4 @@
 const express = require('express')
-const router = express.Router();
-const mongoose = require('mongoose');
 const expressEjsLayout = require('express-ejs-layouts')
 
 const app_port = process.env.PORT || 3000
