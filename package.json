@@ -1,0 +1,36 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "s": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.15",
+    "@types/mocha": "^8.2.1",
+    "chai": "^4.3.3",
+    "eslint": "^7.21.0",
+    "mocha": "^8.3.1",
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "test": "mocha test/*.spec.js --color",
+    "lint": "eslint src/*.js --color"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tamir-tech/group11project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tamir-tech/group11project/issues"
+  },
+  "homepage": "https://github.com/tamir-tech/group11project#readme"
+}
