@@ -1,0 +1,100 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<h1 class="mt-4">Set Appointment</h1>
+<nav class="w3-bar w3-black">
+    <a href="/dashboard" class="w3-button w3-bar-item">Home</a>
+    <a href="/appointment" class="w3-button w3-bar-item">Appointment</a>
+    <a href="/profile" class="w3-button w3-bar-item">Profile</a>
+    <a href="#forum" class="w3-button w3-bar-item">Forum</a>
+    <a href="#contact" class="w3-button w3-bar-item">Contact</a>
+    <a href="/users/logout" class="w3-button w3-bar-item">Logout</a>
+</nav>
+
+
+
+<section class="w3-container w3-center w3-content" style="max-width:600px">
+    <h2 class="w3-wide">Healthcare</h2>
+    <p class="w3-opacity"><i>Hello here in healthcare we came to support u to find a suitable doctor which will provide u with the best treartment whichever u need</i></p>
+</section>
+    <div class="row mt-5">
+        <div class="col-md-6 m-auto">
+            <div class="card card-body">
+                    <div class="form-group">
+                        <% include ./partials/messages %>
+                        <form action="/appointment"method="POST">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="fname">First Name</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="name" id="name" name="name" placeholder="Your name.."
+                                           value="<%= typeof name != 'undefined' ? name : '' %>">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-25">
+                                    <label for="lname">Last Name</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="lastname" id="lastname" name="lastname" placeholder="Your last name.."
+                                           value="<%= typeof lastname != 'undefined' ? lastname : '' %>">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="filed">filed of medicine</label>
+                                </div>
+                                <div class="form-group">
+                                    <select type="field" id="field" name="filed">
+                                        <option value="Psychiatry">Psychiatry</option>
+                                        <option value="Surgery">Surgery</option>
+                                        <option value="Family medicine">Family medicine</option>
+                                        <option value="Urologist">Urologist</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="Dname">Doctor name</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="dname" id="dname" name="dname" placeholder="doctor's name.."
+                                           value="<%= typeof dname != 'undefined' ? dname : '' %>">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group">
+
+                                    <label for="Appointmentdate">Select date:</label>
+                                    <input type="date" id="date" name="date"
+                                           value="<%= typeof date != 'undefined' ? date : '' %>">
+
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="appt">Select a time:</label>
+                                        <input type="time" id="time" name="time"
+                                               value="<%= typeof time != 'undefined' ? time : '' %>">
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="subject">Subject</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea type="subject" id="subject" name="subject" placeholder="Write something.." style="height:200px"
+                                                  value="<%= typeof subject != 'undefined' ? subject : '' %>"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Submit">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+

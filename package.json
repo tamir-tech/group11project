@@ -1,45 +1,27 @@
 {
-  "name": "project",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
-  "dependencies": {
-    "bcrypt": "^5.0.1",
-    "connect-flash": "^0.1.1",
-    "ejs": "^3.1.6",
-    "express": "^4.17.1",
-    "express-ejs-layouts": "^2.5.0",
-    "express-session": "^1.17.1",
-    "mongoose": "^5.12.0",
-    "passport": "^0.4.1",
-    "passport-local": "^1.0.0",
-    "s": "^1.0.0"
-  },
-  "devDependencies": {
-    "@types/chai": "^4.2.15",
-    "@types/mocha": "^8.2.1",
-    "chai": "^4.3.3",
-    "eslint": "^7.21.0",
-    "mocha": "^8.3.1",
-    "nodemon": "^2.0.7"
-  },
+  "name": "node_passport_login",
+  "version": "2.0.0",
+  "description": "Node.js authentication with Passport",
+  "main": "app.js",
   "scripts": {
-    "dev": "nodemon src/index.js",
-    "test": "mocha test/*.spec.js --color",
-    "lint": "eslint src/*.js --color",
-    "start": "node src/index.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tamir-tech/group11project.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tamir-tech/group11project/issues"
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.7.5",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
   },
-  "homepage": "https://github.com/tamir-tech/group11project#readme"
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
 }
