@@ -26,9 +26,20 @@ After clone the project open terminal and navigate to project folder and run the
 ```
 npm install
 ```
-
+and then for running the project on 127.0.0.1:5000 run the follow command
+```
+npm start
+```
+or inside src folder
+```
+node app.js
+```
 	
 ## Technologies
 Project is created with:
 * WebStorm
 * Node.js
+* mongodb
+* express
+* passport
+* bcrypt
