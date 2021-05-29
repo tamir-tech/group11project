@@ -6,7 +6,7 @@ const Insu = require('../models/Insu');
 const nodemailer = require('nodemailer');
 const Str = require('@supercharge/strings')
 const Post = require('../models/Post');
-
+const Comm = require('../models/Comm');
 // Welcome Page
 router.get('/', forwardAuthenticated, (req, res) => res.render('welcome'));
 
@@ -183,19 +183,25 @@ router.get('/forum',ensureAuthenticated,(req,res)=> {
     Post.find({}, function (err,data){
         if (err)
             throw err
-        res.render('forums', {posts : data})
+        Comm.find({}, function (err,data1){
+            if (err)
+                throw err
+
+            res.render('forums', {posts : data,comms:data1})
+        })
+
     })
 
 })
 
-router.post('/forum',(req, res) => {
+router.post('/createpost',(req, res) => {
         let errors = [];
         const { title, para } = req.body;
         if (!title || !para) {
             errors.push({ msg: 'Please enter all fields' });
         }
         if (errors.length > 0) {
-            res.render('forum', {
+            res.render('createpost', {
                 errors,
                 title,
                 para,
@@ -213,5 +219,17 @@ router.post('/forum',(req, res) => {
             })
 router.get('/createpost',ensureAuthenticated,(req,res)=> {
         res.render('createpost')
+})
+router.post('/forum',(req, res) => {
+    let errors = [];
+    const {title, para} = req.body;
+    console.log(title)
+    console.log(para)
+    const newComm = new Comm({
+        Title :title,
+        Para: para
+    }).save();
+
+    res.redirect('/dashboard')
 })
 module.exports = router;
