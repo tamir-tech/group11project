@@ -12,3 +12,7 @@
     <a href="/users/logout" class="w3-button w3-bar-item">Logout</a>
 </nav>
 
+<% for(var i=0;i<appos.length;i++){ %>
+    <li>  <button onclick="myFunction()"> <%= appos[i].name+ appos[i].data +appos[i].time+"subject:"+appos[i].subject %></button></li>
+<% } %>
+
