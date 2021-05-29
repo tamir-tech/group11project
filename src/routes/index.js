@@ -45,6 +45,9 @@ router.get('/appointment',ensureAuthenticated,(req,res)=> {
         })
     }
 })
+router.delete ('manageAppointment',ensureAuthenticated,(req,res)=>{
+
+})
 router.get('/flightHealthInsurance',ensureAuthenticated,(req,res)=> {
     if (req.user.radio == 'doctor') {
         res.render('flightHealthInsurance', {
@@ -219,6 +222,10 @@ router.post('/createpost',(req, res) => {
             })
 router.get('/createpost',ensureAuthenticated,(req,res)=> {
         res.render('createpost')
+})
+router.get('/contact',ensureAuthenticated,(req,res)=> {
+        res.render('contact')
+
 })
 router.post('/forum',(req, res) => {
     let errors = [];
