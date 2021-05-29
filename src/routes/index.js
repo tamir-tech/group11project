@@ -114,7 +114,7 @@ router.post('/flightHealthInsurance',(req, res) => {
         errors.push({msg: 'Please enter all fields'});
     }
     if (errors.length > 0) {
-        res.render('setAppointment', {
+        res.render('flightHealthInsurance', {
             errors,
             name,
             lastname,
@@ -128,7 +128,7 @@ router.post('/flightHealthInsurance',(req, res) => {
         Insu.findOne({date: date}).then(insu => {
             if (insu) {
                 errors.push({msg: 'insurance date already exsist'});
-                res.render('setAppointment', {
+                res.render('flightHealthInsurance', {
                     errors, name, lastname, filed, id, date, date2, payment
 
                 })
