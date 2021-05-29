@@ -10,7 +10,7 @@
     <a href="/profile" class="w3-button w3-bar-item">Profile</a>
     <a href="/flightHealthInsurance" class="w3-button w3-bar-item">flight Health Insurancee</a>
     <a href="/forum" class="w3-button w3-bar-item">Forum</a>
-    <a href="#contact" class="w3-button w3-bar-item">Contact</a>
+    <a href="/contact" class="w3-button w3-bar-item">Contact</a>
     <a href="/users/logout" class="w3-button w3-bar-item">Logout</a>
 </nav>
 <!--SearchBox Section-->
@@ -34,7 +34,7 @@
         <form action="/forum"method="POST">
             <div class="form-group">
                 <div class="form-group">
-                    <h1><%= posts[i].Title %></h1>
+                    <h1 class="w3-button w3-bar-item"><%= posts[i].Title %> </h1>
                     <p class="w3-opacity"><i><%= posts[i].Para %></i></p>
                     <h1>comments:</h1>
                     <% for(var j=0;j<comms.length;j++){ %>
