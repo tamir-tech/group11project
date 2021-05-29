@@ -29,9 +29,15 @@ router.get('/profile', ensureAuthenticated, (req, res) => {
 });
 router.get('/appointment',ensureAuthenticated,(req,res)=> {
     if (req.user.radio == 'doctor') {
-        res.render('mangeAppointment', {
-            user: req.user
+        Appo.find({dname:req.user.name},function (err,appo)
+        {if(err) throw err
+            res.render('mangeAppointment', {
+                user: req.user,appos:appo
+
         })
+
+        }
+    )
     } else {
         res.render('setAppointment', {
             user: req.user
@@ -145,15 +151,7 @@ router.post('/flightHealthInsurance',(req, res) => {
                         pass: 'kfir1234'
                     }
                 });
-                 Insu.findOne({date: date}).then(insu1 => {
-                    if (insu1) {
-                        insu1._id
-                        console.log(insu1._id)
-                        console.log(insu1._id.str)
-                        console.log(insu1._id.toString)
-                        console.log(insu1.payment)
-                    }
-                })
+
 
                 const mailOptions = {
                     from: 'bitonkfir0@gmail.com',
