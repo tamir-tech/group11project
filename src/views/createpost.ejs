@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<h1 class="mt-4">Mange Appointment</h1>
+<nav class="w3-bar w3-black">
+    <a href="/dashboard" class="w3-button w3-bar-item">Home</a>
+    <a href="/appointment" class="w3-button w3-bar-item">Appointment</a>
+    <a href="/profile" class="w3-button w3-bar-item">Profile</a>
+    <a href="/flightHealthInsurance" class="w3-button w3-bar-item">flight Health Insurancee</a>
+    <a href="/forum" class="w3-button w3-bar-item">Forum</a>
+    <a href="#contact" class="w3-button w3-bar-item">Contact</a>
+    <a href="/users/logout" class="w3-button w3-bar-item">Logout</a>
+</nav>
+<form action="/forum"method="POST">
+    <div class="form-group">
+        <div class="form-group">
+            <label for="title">Title of post</label>
+        </div>
+        <div class="form-group">
+            <input type="title" id="title" name="title" placeholder="Your title.."
+                   value="<%= typeof title != 'undefined' ? title : '' %>">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-25">
+            <label for="lname">Paraghrape</label>
+        </div>
+        <div class="form-group">
+            <textarea type="para" id="para" name="para" placeholder="Your para.."
+                   value="<%= typeof para != 'undefined' ? para : '' %>"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Submit">
+    </div>
+</form>
+</body>
+</html>

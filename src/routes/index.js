@@ -5,6 +5,7 @@ const Appo = require('../models/Appo');
 const Insu = require('../models/Insu');
 const nodemailer = require('nodemailer');
 const Str = require('@supercharge/strings')
+const Post = require('../models/Post');
 
 // Welcome Page
 router.get('/', forwardAuthenticated, (req, res) => res.render('welcome'));
@@ -180,5 +181,39 @@ router.post('/flightHealthInsurance',(req, res) => {
         })
     }
 })
+router.get('/forum',ensureAuthenticated,(req,res)=> {
+    Post.find({}, function (err,data){
+        if (err)
+            throw err
+        res.render('forums', {posts : data})
+    })
 
+})
+
+router.post('/forum',(req, res) => {
+        let errors = [];
+        const { title, para } = req.body;
+        if (!title || !para) {
+            errors.push({ msg: 'Please enter all fields' });
+        }
+        if (errors.length > 0) {
+            res.render('forum', {
+                errors,
+                title,
+                para,
+            });
+        }
+                else {
+                    const newPost = new Post({
+                        Title :title,
+                        Para: para
+                    }).save();
+                    console.log(newPost)
+                    res.redirect('/forum')
+                }
+
+            })
+router.get('/createpost',ensureAuthenticated,(req,res)=> {
+        res.render('createpost')
+})
 module.exports = router;

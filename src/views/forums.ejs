@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<h1 class="mt-4">Mange Appointment</h1>
+<nav class="w3-bar w3-black">
+    <a href="/dashboard" class="w3-button w3-bar-item">Home</a>
+    <a href="/appointment" class="w3-button w3-bar-item">Appointment</a>
+    <a href="/profile" class="w3-button w3-bar-item">Profile</a>
+    <a href="/flightHealthInsurance" class="w3-button w3-bar-item">flight Health Insurancee</a>
+    <a href="/forum" class="w3-button w3-bar-item">Forum</a>
+    <a href="#contact" class="w3-button w3-bar-item">Contact</a>
+    <a href="/users/logout" class="w3-button w3-bar-item">Logout</a>
+</nav>
+<!--SearchBox Section-->
+<div class="search-box">
+    <div>
+        <select name="" id="">
+            <option value="Everything">Everything</option>
+            <option value="Titles">Titles</option>
+            <option value="Descriptions">Descriptions</option>
+        </select>
+        <input type="text" name="q" placeholder="search ...">
+        <button><i class="fa fa-search"></i></button>
+    </div>
+</div>
+
+<body>
+<a href="/CreatePost" class="w3-button w3-bar-item">Create a post</a>
+<h1>Posts</h1>
+<ul>
+    <% for(var i=0;i<posts.length;i++){ %>
+        <li>  <button onclick="myFunction()"> <%= posts[i].Title %></button></li>
+        <div id= "myDIV" , style="display: none">
+            <%= posts[i].Para %>
+        </div>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myDIV");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+        </script>
+    <%  } %>
+
+
+</ul>
+</body>
+</html>
